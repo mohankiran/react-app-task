@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "courseName": "React JS",
+        "Question":"What is React JS ?",
+        "option1": "Java Script Frame work",
+        "option2":"JS Library"
+    },
+    {
+        "id": 2,
+        "courseName": "Angular JS",
+        "Question":"What is Angular JS ?",
+        "option1": "Java Script Frame work",
+        "option2":"JS Library"
+    },
+    {
+        "id": 3,
+        "courseName": "Vue JS",
+        "Question":"What is Vue JS ?",
+        "option1": "Java Script Frame work",
+        "option2":"JS Library"
+    },
+    {
+        "id": 4,
+        "courseName": "Node JS",
+        "Question":"What is Node JS ?",
+        "option1": "Java Script Frame work",
+        "option2":"JS Library"
+    }
+    
+    
+]

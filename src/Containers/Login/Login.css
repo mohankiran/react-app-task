@@ -1,0 +1,67 @@
+.headr-text {
+    font-size: 2rem;
+    color: aliceblue;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: auto;
+}
+body {
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+  }
+  .card-signin {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  
+  .card-signin .card-body {
+    padding: 2rem;
+  }
+  
+  .form-signin {
+    width: 100%;
+  }
+  
+  .form-signin .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+  }
+  
+  .form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-label-group input {
+    height: auto;
+    border-radius: 2rem;
+  }
+  .font-we {
+    font-weight: 500;
+  }
+  .form-group.required .control-label:after {
+    content:"*";
+    color:red;
+  }
+  .rm-mr-bt {
+    margin-bottom: 0em !important
+  }
+  .appl-color {
+      color: red;
+      padding-bottom: 3px;
+  }
+  
+  
+  
