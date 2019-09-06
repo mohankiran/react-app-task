@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import '../../App.css'
 import './Login.css'
+import * as actionHandler from '../../Store/actions/actions';
 
 class Login extends Component {
    
@@ -36,29 +36,21 @@ class Login extends Component {
             this.setState({pwdRequired: true})
             return false;
         } else {
-            this.props.history.push(
-            {pathname:'/dashboard', 
-            values:  {
-                       comments: this.state.comments
-                    }
-                })
+            // this.props.history.push(
+            // {pathname:'/dashboard', 
+            // values:  {
+            //            comments: this.state.comments
+            //         }
+            //     })
+            this.props.history.push('/dashboard')
         }
         
     } 
     clearForm = () => {
         document.getElementById("loginForm").reset();
     }
-  
-    componentDidMount() {
-        console.log("Did Mount")
-        axios.get("../../data.json").then(response => {
-            console.log("data--->",response.data)
-            this.setState({
-                comments : response.data
-            })
-        },error => {
-            console.log("Error",Error)
-        })
+    componentWillReceiveProps() {
+        console.log("Will Receive Props")
     }
     render() {
        
@@ -70,6 +62,9 @@ class Login extends Component {
                             <div className="headr-text">
                             Login Page
                             </div>
+                           
+                                
+                          
                     </div>
                 </nav>
             
@@ -131,16 +126,18 @@ class Login extends Component {
 }
 const mapStoretoProps = (state) => {
     return {
-        emailId : state.emailId,
-        password : state.password,
-        comments: state.comments
+        emailId : state.loginReducer.emailId,
+        password : state.loginReducer.password,
+        usernameRequired: state.loginReducer.usernameRequired,
+        pwdRequired: state.loginReducer.pwdRequired
     }
 };
 const dispatchToProps = (dispatch) => {
     return {
-        changeHandler : (event) => dispatch({type:'CHANGEHANDLER', name:event.target.name, value: event.target.value})
+        changeHandler : (event) => dispatch(actionHandler.getInputVal(event.target) )
+       //getDetails: (event) => dispatch(actionHandler.getValues(event))
     }
 }
 
 
-export default connect(mapStoretoProps,dispatchToProps) (Login);
+export default connect(mapStoretoProps, dispatchToProps) (Login);

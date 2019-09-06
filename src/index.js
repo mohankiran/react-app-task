@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Reducer from './Store/Reducer';
+import LoginReducer from './Store/reducers/LoginReducer';
+import dashboardReducer from './Store/reducers/dashboardReducer';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import  { createStore } from 'redux';
+import  { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk'
 import {Provider} from 'react-redux'
 
-const store = createStore(Reducer);
+const rootReducer = combineReducers({
+    loginReducer: LoginReducer,
+    dashboardReducer: dashboardReducer
+})
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
 

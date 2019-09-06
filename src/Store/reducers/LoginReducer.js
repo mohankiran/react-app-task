@@ -8,10 +8,11 @@ const intialState = {
 const reducer = (state = intialState, action) => {
    switch(action.type) {
     case 'CHANGEHANDLER': 
-    console.log("state--->",state)
         return {
            ... state, 
-           [action.name] : action.value
+           [action.name] : action.value,
+           usernameRequired: false,
+           pwdRequired: false
         } 
         default:
             return state
